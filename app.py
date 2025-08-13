@@ -4,6 +4,9 @@ import math
 import os
 
 app = FastAPI(title="Betting Brain API", version="1.0")
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "betting-brain-api"}
 
 # 🔐 Seguridad: API KEY sencilla (la clave la configuras en Render)
 API_KEY = os.getenv("API_KEY", "SUPER_SECRETA_123")  # Cámbiala en Render o aquí si quieres
