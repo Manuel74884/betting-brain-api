@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: betting-brain-api
+    env: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: API_KEY
+        value: SUPER_SECRETA_123
+    autoDeploy: true
