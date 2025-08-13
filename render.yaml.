@@ -5,7 +5,7 @@ services:
     plan: free
     region: frankfurt
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port 10000
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: API_KEY
         value: SUPER_SECRETA_123
